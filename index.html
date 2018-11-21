@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Paper Memory Paper Meaning</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    </head>
+    <body>
+        <div id='header'>
+        	<h2>Paper Memory Paper Meaning</h2>
+        	<p>A tarot deck made from pieces of paper I've saved over the years. I created meaning for each card with an associated memory.</p>
+        	<p>Reload page for new reading. Click on a card to see the associated memory.</p>
+        </div>
+        <div id='card1' class='card' onclick="toggleMemory('card1mem')">
+        	<h3>Past</h3>
+	        <div class="front"> 
+			    <img id='card1front'></img>
+			</div> 
+			<div class="back">
+			    <img id='card1back'></img>
+			</div>
+			<div id="card1mem" class="memory"></div>
+        </div>
+        <div id='card2' class='card' onclick="toggleMemory('card2mem')">
+        	<h3>Present</h3>
+        	<div class="front"> 
+			    <img id='card2front'></img>
+			</div> 
+			<div class="back">
+			    <img id='card2back'></img>
+			</div>
+			<div id="card2mem" class="memory"></div>
+		</div>
+        <div id='card3' class='card' onclick="toggleMemory('card3mem')">
+        	<h3>Future</h3>
+        	<div class="front"> 
+			    <img id='card3front'></img>
+			</div> 
+			<div class="back">
+			    <img id='card3back'></img>
+			</div>
+			<div id="card3mem" class="memory"></div>
+		</div>
+        <script> 
+        	// call to load json file with card info
+        	var requesturl = 'https://raw.githubusercontent.com/jirrian/jirrian.github.io/master/papermemorypapermeaning/cards.json';
+        	var request = new XMLHttpRequest();
+        	request.open('GET', requesturl);
+        	request.responseType = 'json';
+			request.send();
+
+			request.onload = function() {
+  				var cards = request.response;
+  				console.log(cards);
+  				doReading(cards);
+  			}
+
+  			function doReading(jsonObj){
+  				// choose 3 cards
+  				var chosenCard1 = Math.floor(Math.random() * jsonObj['cards'].length);
+  				var chosenCard2 = Math.floor(Math.random() * jsonObj['cards'].length);
+  					while(chosenCard2 == chosenCard1){
+  						chosenCard2 = Math.floor(Math.random() * jsonObj['cards'].length);
+  					}
+  				var chosenCard3 = Math.floor(Math.random() * jsonObj['cards'].length);
+  				while(chosenCard3 == chosenCard2 || chosenCard3 == chosenCard1){
+  						chosenCard3 = Math.floor(Math.random() * jsonObj['cards'].length);
+  				}
+  				// choose orientations
+  				var card1Up = chooseOrientation(chosenCard1);
+  				var card2Up = chooseOrientation(chosenCard2);
+  				var card3Up = chooseOrientation(chosenCard3);
+
+  				// populate divs
+  				var card1 = document.querySelector('#card1');
+  				displayCard(jsonObj, chosenCard1, card1Up, card1, "card1front", "card1back", "card1mem");
+
+  				var card2 = document.querySelector('#card2');
+  				displayCard(jsonObj, chosenCard2, card2Up, card2, "card2front", "card2back", "card2mem");
+
+  				var card3 = document.querySelector('#card3');
+  				displayCard(jsonObj, chosenCard3, card3Up, card3, "card3front", "card3back", "card3mem");
+
+  			}
+
+  			function chooseOrientation(chosenCardNum){
+  				if(chosenCardNum % 2 == 0){
+  					return 'up';
+  				}
+  				else{
+  					return 'down';
+  				}
+  			}
+
+  			function displayCard(jsonObj, chosenCardNum, chosenCardUp, cardDiv, cardFrontDiv, cardBackDiv, cardMemDiv){
+  				console.log(cardDiv);
+  				var cardText = document.createElement('h4');
+  				cardText.textContent = jsonObj['cards'][chosenCardNum]['name'] + ', ' + chosenCardUp;
+  				var meaningText = document.createElement('p');
+  				meaningText.textContent = "This card represents " + jsonObj['cards'][chosenCardNum]['meaning'][chosenCardUp] + '.';
+  				cardDiv.appendChild(cardText);
+  				cardDiv.appendChild(meaningText);
+
+  				document.getElementById(cardFrontDiv).src = 'images/' + jsonObj['cards'][chosenCardNum]['image']['front'];
+  				document.getElementById(cardBackDiv).src = 'images/' + jsonObj['cards'][chosenCardNum]['image']['back'];
+
+  				//add memory
+  				var memText = document.createElement('p');
+  				memText.textContent = jsonObj['cards'][chosenCardNum]['memory'];
+  				document.getElementById(cardMemDiv).appendChild(memText);
+
+  				// rotate upside down
+  				 if(chosenCardUp == 'down'){
+  					document.getElementById(cardFrontDiv).style.WebkitTransform = "rotate(180deg)"; // Safari 3-8
+    				document.getElementById(cardFrontDiv).style.msTransform = "rotate(180deg)"; // IE9 
+    				document.getElementById(cardFrontDiv).style.transform = "rotate(180deg)";
+
+					document.getElementById(cardBackDiv).style.WebkitTransform = "rotate(180deg)"; // Safari 3-8
+    				document.getElementById(cardBackDiv).style.msTransform = "rotate(180deg)"; // IE9 
+    				document.getElementById(cardBackDiv).style.transform = "rotate(180deg)";
+  				 }
+  			}
+
+
+  			//jquery library for flip animation
+  			$("#card1").flip({trigger: 'hover'});
+  			$("#card2").flip({trigger: 'hover'});
+  			$("#card3").flip({trigger: 'hover'});
+
+  			//show memory on click
+  			function toggleMemory(divName){
+  				var div = document.getElementById(divName);
+				if (div.style.display === "none") {
+				    div.style.display = "block";
+				} else {
+				    div.style.display = "none";
+				}
+  			}
+        </script>
+
+    </body>
+</html>

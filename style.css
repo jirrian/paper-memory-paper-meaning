@@ -1,0 +1,33 @@
+*{
+	font-family: 'Courier New'
+}
+
+body{
+	background-image: url("paper.jpg");
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#header{
+	margin: auto;
+	width: 80%;
+}
+
+.card{
+	z-index:-1;
+	width:20%;
+	float:left;
+	margin-left:80px;
+}
+
+.memory{
+	display: none;
+	padding: 5px;
+	margin-top:10px;
+	border: solid;
+	border-width: 1px;
+	border-color: black;
+}

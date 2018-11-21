@@ -1,0 +1,124 @@
+{
+	"cards": [
+		{
+			"name": "beach polaroid",
+			"memory": "I took this photo in Galveston, Texas when I went to visit my parents in Texas. We drove onto the beach and walked to the water. It was January and almost barren except for some birds.",
+			"meaning": {
+				"up": "peace, relaxation, and clarity",
+				"down": "muddled thoughts, trouble concentrating, and stress"
+			},
+			"image": {
+				"front": "beachpolaroid_front.jpg",
+				"back": "polaroid_back.jpg"
+			} 
+		},
+		{
+			"name": "ripped dollar",
+			"memory": "I found this dollar rolled up on the sidewalk. After seeing that it was ripped in half, I put it in my pocket and forgot about it. Later in the day, a man stopped me on the street to tell me that the dollar had fallen out of my pocket and handed it back to me. For some reason it followed me.",
+			"meaning": {
+				"up": "luck, new opportunities, and a positive random occurance",
+				"down": "bad luck or nothing new or special happening to you for a while"
+			},
+			"image": {
+				"front": "dollar_front.jpg",
+				"back": "dollar_back.jpg"
+			} 
+		},
+		{
+			"name": "flower message card",
+			"memory": "An ex-boyfriend sent this to me along with flowers after I wanted to end the relationship. I didn't like the flowers because I felt forced to forgive and forget because of the showy gesture.",
+			"meaning": {
+				"up": "forced compromise, pressure from relationships, accepting a deal that you feel uncomfortable about",
+				"down": "mutual understanding, compromise where both parties walk away satisfied"
+			},
+			"image": {
+				"front": "flowermessage_front.jpg",
+				"back": "flowermessage_back.jpg"
+			} 
+		},
+		{
+			"name": "graduation ticket",
+			"memory": "This is the ticket to my graduation ceremoney from NYU undergrad at Yankee Stadium. This was the main ceremoney for all of NYU so I almost didn't go. Since my parents weren't coming, I came with one friend and his family and left with another friend and ate with her family afterwards.",
+			"meaning": {
+				"up": "alienation and disconnection from surroundings due to emotional exhaustion",
+				"down": "being in the moment, connected to surroundings"
+			},
+			"image": {
+				"front": "gradticket_front.jpg",
+				"back": "gradticket_back.jpg"
+			} 
+		},
+		{
+			"name": "laundry card",
+			"memory": "This is from the laundromat across from the first apartment I lived in after I moved back to New York. At this apartment and through late night runs to the laundromat, I learned to accept stability and care for my mental health.",
+			"meaning": {
+				"up": "stability, security, and finding happiness in every day life",
+				"down": "instability and constant change as a result from own decisions"
+			},
+			"image": {
+				"front": "laundrycard_front.jpg",
+				"back": "laundrycard_back.jpg"
+			} 
+		},
+		{
+			"name": "new orleans polaroid",
+			"memory": "A boy I was seeing took this photo of me in an AirBnb in New Orleans. We only knew each other for a couple months before the trip and we don't talk anymore.",
+			"meaning": {
+				"up": "escapism, impulsive actions, and avoiding responsibilities and reality",
+				"down": "taking on responsibilities and grounding oneself"
+			},
+			"image": {
+				"front": "neworleanspolaroid_front.jpg",
+				"back": "polaroid_back.jpg"
+			} 
+		},
+		{
+			"name": "pokemon card",
+			"memory": "My crush at the time gave this to me the first time we hung out outside of school. The experience overall was really awkward since I was so nervous and they were also shy.",
+			"meaning": {
+				"up": "new romance and exploring new feelings or emotions",
+				"down": "lack of excitement, familiarity, and confidence"
+			},
+			"image": {
+				"front": "pokemoncard_front.jpg",
+				"back": "pokemoncard_back.jpg"
+			} 
+		},
+		{
+			"name": "black luster soldier yugioh card",
+			"memory": "The person who gave me this ended up hurting me irreparably. I used to keep this card in my phone case, displaying it and taking it everywhere. Now it's become a sort of inside joke with my friends.",
+			"meaning": {
+				"up": "a bad omen for a negative experience that has lasting harmful effects",
+				"down": "avoiding a bad situation with clear judgement"
+			},
+			"image": {
+				"front": "yugiohcard_front.jpg",
+				"back": "yugiohcard_back.jpg"
+			} 
+		},
+		{
+			"name": "pixels movie ticket",
+			"memory": "I went to see this movie with a good friend thinking it would be so bad it would be good. It was actually just really bad and we were so mad we wasted $16 dollars on the ticket that we snuck into a different movie showing.",
+			"meaning": {
+				"up": "strong bond and closeness in a friendship",
+				"down": "distance in relationships with friends"
+			},
+			"image": {
+				"front": "pixelsticket_front.jpg",
+				"back": "pixelsticket_back.jpg"
+			} 
+		},
+		{
+			"name": "red envelope",
+			"memory": "I saved this from a Chinese New Year from childhood. The time of the new year gives me a feeling of warmth and closeness with my family and community.",
+			"meaning": {
+				"up": "warmth, closeness with family, and joy like that experienced in childhood",
+				"down": "coldness and distance from family"
+			},
+			"image": {
+				"front": "redenvelope_front.jpg",
+				"back": "redenvelope_back.jpg"
+			} 
+		}
+	]
+}
